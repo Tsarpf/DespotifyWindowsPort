@@ -56,6 +56,10 @@
     <ClInclude Include="deslib\sndqueue.h" />
     <ClInclude Include="deslib\util.h" />
     <ClInclude Include="deslib\xml.h" />
+    <ClInclude Include="moddedWin\WTypesbase.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{7C1A1464-5541-4EA4-9D5B-5841513166D6}</ProjectGuid>

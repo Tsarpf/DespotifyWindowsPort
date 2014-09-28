@@ -146,5 +146,11 @@
     <ClInclude Include="deslib\sha1.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="moddedWin\WTypesbase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
 </Project>
