@@ -2,6 +2,7 @@
  * $Id: session.c 508 2010-04-29 19:08:47Z dstien $
  *
  */
+#include <Windows.h>
 
 #include <stdlib.h>
 #include <string.h>
@@ -20,6 +21,8 @@
 #include "session.h"
 #include "packet.h"
 #include "util.h"
+
+#include "Ws2tcpip.h";
 
 static unsigned char DH_generator[1] = { 2 };
 
@@ -116,7 +119,7 @@ void session_auth_set (SESSION * session, const char *username, const char *pass
 	session->password[sizeof (session->password) - 1] = 0;
 }
 
-extern "C" {
+//extern "C" {
 	int session_connect(SESSION * session)
 	{
 		struct addrinfo h, *airoot, *ai;
@@ -191,7 +194,7 @@ extern "C" {
 
 		return 0;
 	}
-}
+//}
 
 void session_disconnect (SESSION * session)
 {

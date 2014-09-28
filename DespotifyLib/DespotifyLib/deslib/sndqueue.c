@@ -2,11 +2,10 @@
  * $Id: sndqueue.c 519 2012-03-17 09:25:26Z dalus $
  *
  */
-
+#include <Windows.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-//#include <unistd.h>
 #include <io.h>
 #include "../pthread/pthread.h";
 #include <assert.h>

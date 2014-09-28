@@ -5,6 +5,7 @@
  * Denial of Service and password bruteforce attacks
  *
  */
+#include <Windows.h>
 
 #include <stdlib.h>
 #include "network.h"

@@ -2,6 +2,7 @@
  * $Id: keyexchange.c 508 2010-04-29 19:08:47Z dstien $
  *
  */
+#include <Windows.h>
 
 #include <stdio.h>
 #include <string.h>

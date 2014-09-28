@@ -2,6 +2,7 @@
  * $Id: dns.c 425 2009-08-04 21:35:54Z noah-w $
  *
  */
+#include <Windows.h>
 
 #include <stdio.h>
 #include <stdlib.h>

@@ -9,6 +9,7 @@
  *
  * $Id: buf.c 182 2009-03-12 08:21:53Z zagor $
  */
+#include <Windows.h>
 
 #include <assert.h>
 #include <stdlib.h>

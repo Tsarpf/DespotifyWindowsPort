@@ -1,3 +1,5 @@
+#include <Windows.h>
+
 #include "../dirent/dirent.h"
 #include <errno.h>
 #include <limits.h>

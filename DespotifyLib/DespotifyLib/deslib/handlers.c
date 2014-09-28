@@ -4,6 +4,7 @@
  * Default handlers for different types of commands
  *
  */
+#include <Windows.h>
 
 #include "../pthread/pthread.h"
 #include <stdio.h>

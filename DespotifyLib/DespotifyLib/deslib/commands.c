@@ -5,6 +5,7 @@
  * you may send to Spotify's service.
  *
  */
+#include <Windows.h>
 
 #include <stdio.h>
 #include <string.h>

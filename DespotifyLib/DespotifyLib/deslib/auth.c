@@ -8,6 +8,7 @@
  * exchange the next two packets.
  *
  */
+#include <Windows.h>
 
 #include <stdlib.h>
 #include <string.h>

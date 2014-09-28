@@ -8,16 +8,13 @@
 #ifndef DESPOTIFY_NETWORK_H
 #define DESPOTIFY_NETWORK_H
 
-#ifdef __MINGW32__
 #define __use_winsock__
-#else
-#define __use_posix__
-#endif
 
 // include stuff
 //#ifdef __use_winsock__
  #include <stdio.h>
- #include <winsock.h>
+#include <Windows.h>
+ //#include <winsock.h>
  #ifndef in_addr_t
   #define in_addr_t unsigned long
  #endif
