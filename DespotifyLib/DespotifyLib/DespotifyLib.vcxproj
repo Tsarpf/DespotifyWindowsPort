@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="deslib\aes.c" />
+    <ClCompile Include="deslib\auth.c" />
+    <ClCompile Include="deslib\buf.c" />
+    <ClCompile Include="deslib\cache.c" />
+    <ClCompile Include="deslib\channel.c" />
+    <ClCompile Include="deslib\commands.c" />
+    <ClCompile Include="deslib\despotify.c" />
+    <ClCompile Include="deslib\dns.c" />
+    <ClCompile Include="deslib\ezxml.c" />
+    <ClCompile Include="deslib\handlers.c" />
+    <ClCompile Include="deslib\hmac.c" />
+    <ClCompile Include="deslib\keyexchange.c" />
+    <ClCompile Include="deslib\network.c" />
+    <ClCompile Include="deslib\packet.c" />
+    <ClCompile Include="deslib\puzzle.c" />
+    <ClCompile Include="deslib\session.c" />
+    <ClCompile Include="deslib\sha1.c" />
+    <ClCompile Include="deslib\shn.c" />
+    <ClCompile Include="deslib\sndqueue.c" />
+    <ClCompile Include="deslib\util.c" />
+    <ClCompile Include="deslib\xml.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="deslib\aes.h" />
+    <ClInclude Include="deslib\auth.h" />
+    <ClInclude Include="deslib\buf.h" />
+    <ClInclude Include="deslib\cache.h" />
+    <ClInclude Include="deslib\channel.h" />
+    <ClInclude Include="deslib\commands.h" />
+    <ClInclude Include="deslib\despotify-simple.h" />
+    <ClInclude Include="deslib\despotify.h" />
+    <ClInclude Include="deslib\dns.h" />
+    <ClInclude Include="deslib\ezxml.h" />
+    <ClInclude Include="deslib\handlers.h" />
+    <ClInclude Include="deslib\hmac.h" />
+    <ClInclude Include="deslib\keyexchange.h" />
+    <ClInclude Include="deslib\network.h" />
+    <ClInclude Include="deslib\packet.h" />
+    <ClInclude Include="deslib\puzzle.h" />
+    <ClInclude Include="deslib\session.h" />
+    <ClInclude Include="deslib\sha1.h" />
+    <ClInclude Include="deslib\shn.h" />
+    <ClInclude Include="deslib\sndqueue.h" />
+    <ClInclude Include="deslib\util.h" />
+    <ClInclude Include="deslib\xml.h" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{7C1A1464-5541-4EA4-9D5B-5841513166D6}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>DespotifyLib</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>C:\Users\Tsarpf\Documents\Visual Studio 2013\Projects\DespotifyLib\DespotifyLib\zlib;H:\Downloads\GiGo\libvorbis-1.3.4\libvorbis-1.3.4\include;C:\OpenSSL-Win32\include;C:\Users\Tsarpf\Documents\Visual Studio 2013\Projects\DespotifyLib\DespotifyLib;$(VCInstallDir)include;$(VCInstallDir)atlmfc\include;$(WindowsSDK_IncludePath)</IncludePath>
+    <LibraryPath>$(VCInstallDir)lib;$(VCInstallDir)atlmfc\lib;$(WindowsSDK_LibraryPath_x86);</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
