@@ -20,7 +20,7 @@
 #include "buf.h"
 #include "puzzle.h"
 #include "util.h"
-#include "sha1.h"
+#include "sha1.hpp"
 #include "hmac.h"
 
 void auth_generate_auth_hash (SESSION * session)

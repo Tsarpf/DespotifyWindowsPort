@@ -23,7 +23,7 @@ typedef struct {
 
 
 //__BEGIN_DECLS
-extern "C" {
+//extern "C" {
 	void SHA1Transform(uint32_t[5], const unsigned char[64]);
 	void SHA1Init(SHA1_CTX *);
 	void SHA1Update(SHA1_CTX *, const unsigned char *, unsigned int);
@@ -31,7 +31,7 @@ extern "C" {
 	char *SHA1End(SHA1_CTX *, char *);
 	char *SHA1File(char *, char *);
 	char *SHA1Data(const unsigned char *, size_t, char *);
-}
+//}
 //__END_DECLS
 
 #define SHA1_DIGESTSIZE       20

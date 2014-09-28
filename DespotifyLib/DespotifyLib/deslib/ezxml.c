@@ -309,7 +309,7 @@ void ezxml_proc_inst(ezxml_root_t root, char *s, size_t len)
         root->pi[i] = malloc(sizeof(char *) * 3);
         root->pi[i][0] = target;
         root->pi[i][1] = (char *)(root->pi[i + 1] = NULL); // terminate pi list
-        root->pi[i][2] = strdup(""); // empty document position list
+        root->pi[i][2] = _strdup(""); // empty document position list
     }
 
     while (root->pi[i][j]) j++; // find end of instruction list for this target
@@ -638,32 +638,32 @@ ezxml_t ezxml_parse_fd(int fd)
     if (fd < 0) return NULL;
     fstat(fd, &st);
 
-#ifndef EZXML_NOMMAP
-    l = (st.st_size + sysconf(_SC_PAGESIZE) - 1) & ~(sysconf(_SC_PAGESIZE) -1);
-    if ((m = mmap(NULL, l, PROT_READ | PROT_WRITE, MAP_PRIVATE, fd, 0)) !=
-        MAP_FAILED) {
-        madvise(m, l, MADV_SEQUENTIAL); // optimize for sequential access
-        root = (ezxml_root_t)ezxml_parse_str(m, st.st_size);
-        madvise(m, root->len = l, MADV_NORMAL); // put it back to normal
-    }
-    else { // mmap failed, read file into memory
-#endif // EZXML_NOMMAP
-        l = read(fd, m = malloc(st.st_size), st.st_size);
+//#ifndef EZXML_NOMMAP
+//    l = (st.st_size + sysconf(_SC_PAGESIZE) - 1) & ~(sysconf(_SC_PAGESIZE) -1);
+//    if ((m = mmap(NULL, l, PROT_READ | PROT_WRITE, MAP_PRIVATE, fd, 0)) !=
+//        MAP_FAILED) {
+//        madvise(m, l, MADV_SEQUENTIAL); // optimize for sequential access
+//        root = (ezxml_root_t)ezxml_parse_str(m, st.st_size);
+//        madvise(m, root->len = l, MADV_NORMAL); // put it back to normal
+//    }
+//    else { // mmap failed, read file into memory
+//#endif // EZXML_NOMMAP
+        l = _read(fd, m = malloc(st.st_size), st.st_size);
         root = (ezxml_root_t)ezxml_parse_str(m, l);
         root->len = -1; // so we know to free s in ezxml_free()
-#ifndef EZXML_NOMMAP
-    }
-#endif // EZXML_NOMMAP
+//#ifndef EZXML_NOMMAP
+    //}
+//#endif // EZXML_NOMMAP
     return &root->xml;
 }
 
 // a wrapper for ezxml_parse_fd that accepts a file name
 ezxml_t ezxml_parse_file(const char *file)
 {
-    int fd = open(file, O_RDONLY, 0);
+    int fd = _open(file, O_RDONLY, 0);
     ezxml_t xml = ezxml_parse_fd(fd);
     
-    if (fd >= 0) close(fd);
+    if (fd >= 0) _close(fd);
     return xml;
 }
 
@@ -930,7 +930,7 @@ ezxml_t ezxml_set_attr(ezxml_t xml, const char *name, const char *value)
         if (! value) return xml; // nothing to do
         if (xml->attr == EZXML_NIL) { // first attribute
             xml->attr = malloc(4 * sizeof(char *));
-            xml->attr[1] = strdup(""); // empty list of malloced names/vals
+            xml->attr[1] = _strdup(""); // empty list of malloced names/vals
         }
         else xml->attr = realloc(xml->attr, (l + 4) * sizeof(char *));
 

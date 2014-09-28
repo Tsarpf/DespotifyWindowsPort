@@ -24,7 +24,7 @@ static char rcsid[] = "$OpenBSD: sha1.c,v 1.12 2003/07/21 20:37:08 millert Exp $
 #include <sys/types.h>
 
 #include <string.h>
-#include "sha1.h"
+#include "sha1.hpp"
 
 #define rol(value, bits) (((value) << (bits)) | ((value) >> (32 - (bits))))
 

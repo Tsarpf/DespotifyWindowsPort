@@ -101,7 +101,7 @@ char *dns_srv_list (char *hostname)
 		if(p->wType != DNS_TYPE_SRV)
 			continue;
 
-		svr[i] = strdup (p->Data.SRV.pNameTarget);
+		svr[i] = _strdup (p->Data.SRV.pNameTarget);
 		svr_prio[i] = p->Data.SRV.wPriority;
 		svr_port[i++] = p->Data.SRV.wPort;
 	}

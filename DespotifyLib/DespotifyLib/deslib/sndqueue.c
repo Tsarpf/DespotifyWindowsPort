@@ -17,6 +17,7 @@
 
 #include "sndqueue.h"
 #include "util.h"
+#include <stdint.h>
 
 enum {
     DL_FILLING,
@@ -452,13 +453,13 @@ int snd_consume_data(struct despotify_session* ds, int req_bytes, void* private,
 }
 
 
-extern "C" {
+//extern "C" {
 	static int vorbis_consume(void* source, int bytes, void* private, int offset)
 	{
-		memcpy(private + offset, source, bytes);
+		memcpy((uint8_t*)private + offset, source, bytes);
 		return bytes;
 	}
-}
+//}
 
 /*
  * Ogg-Vorbis read() callback
@@ -531,7 +532,8 @@ int snd_do_vorbis(struct despotify_session* ds, struct pcm_data* pcm ) {
     while (1) {
         /* decode to pcm */
         ssize_t r = ov_read(ds->vf, pcm->buf, sizeof(pcm->buf),
-                            SYSTEM_ENDIAN, 2, 1, NULL);
+                            //SYSTEM_ENDIAN, 2, 1, NULL);
+                            0, 2, 1, NULL);
 
         /* assume no valid data read. */
         pcm->len = 0;

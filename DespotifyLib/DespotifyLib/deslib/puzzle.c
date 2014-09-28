@@ -12,7 +12,7 @@
 #include "puzzle.h"
 #include "session.h"
 #include "util.h"
-#include "sha1.h"
+#include "sha1.hpp"
 
 
 #if !defined srandom || !defined random
@@ -23,6 +23,7 @@
 void puzzle_solve (SESSION * session)
 {
 	SHA1_CTX ctx;
+	ZeroMemory(&ctx, sizeof(SHA1_CTX));
 	unsigned char digest[20];
 	unsigned int *nominator_from_hash;
 	unsigned int denominator;

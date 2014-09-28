@@ -22,7 +22,7 @@
 #include "network.h"
 #include "packet.h"
 #include "session.h"
-#include "sha1.h"
+#include "sha1.hpp"
 #include "sndqueue.h"
 #include "util.h"
 #include "xml.h"
@@ -82,7 +82,9 @@ struct despotify_session* despotify_init_client(void(*callback)(struct despotify
     if (!ds->session)
         return NULL;
 
-    ds->thread = (pthread_t)0;
+    //ds->thread = (pthread_t)0;
+	ds->thread.p = 0;
+	ds->thread.x = 0;
     pthread_cond_init(&ds->sync_cond, NULL);
     pthread_mutex_init(&ds->sync_mutex, NULL);
 
@@ -186,7 +188,8 @@ void despotify_free(struct despotify_session* ds, bool should_disconnect)
         session_disconnect(ds->session);
     }
 
-    if (ds->thread) {
+	//Not sure if breaks stuff
+    if (ds->thread.p) {
         DSFYDEBUG("Canceling despotify networking thread\n");
         r = pthread_cancel(ds->thread);
         DSFYDEBUG("pthread_cancel() returned %d\n", r);

@@ -9,7 +9,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "sha1.h"
+#include "sha1.hpp"
 
 #define HMAC_SHA1_BLOCKSIZE 64
 
