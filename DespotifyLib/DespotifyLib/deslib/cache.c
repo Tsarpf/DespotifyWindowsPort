@@ -19,13 +19,13 @@ bool cache_init(){
     char *ptr;
 
     if((ptr = getenv("XDG_CACHE_HOME")) != NULL){
-        snprintf(cache_directory, PATH_MAX, "%s/despotify", ptr);
+        _snprintf(cache_directory, PATH_MAX, "%s/despotify", ptr);
     }
     else{
         DSFYDEBUG("Error getting $XDG_CACHE_HOME. Trying $HOME...\n");
 
         if((ptr = getenv("HOME")) != NULL){
-            snprintf(cache_directory, PATH_MAX, "%s/.cache", ptr);
+            _snprintf(cache_directory, PATH_MAX, "%s/.cache", ptr);
             if(mkdir(cache_directory, 0755) != 0 && errno != EEXIST){
                 DSFYDEBUG("Error creating cache directory. errno = %d\n", errno);
                 return false;
@@ -71,7 +71,7 @@ void cache_clear(){
         }
 
         /* Build cache filename. */
-        snprintf(cache_filename, PATH_MAX, "%s/%s", cache_directory, dirp->d_name);
+        _snprintf(cache_filename, PATH_MAX, "%s/%s", cache_directory, dirp->d_name);
 
         remove(cache_filename);
     }
@@ -79,7 +79,7 @@ void cache_clear(){
 
 bool cache_contains(unsigned char *id){
     /* Build cache filename. */
-    snprintf(cache_filename, PATH_MAX, "%s/%s", cache_directory, id);
+    _snprintf(cache_filename, PATH_MAX, "%s/%s", cache_directory, id);
 
     /* Try to open file for reading. */
     FILE *file = fopen(cache_filename, "r");
@@ -98,7 +98,7 @@ unsigned char *cache_load(unsigned char *id, unsigned int *size){
     unsigned long fsize;
 
     /* Build cache filename. */
-    snprintf(cache_filename, PATH_MAX, "%s/%s", cache_directory, id);
+    _snprintf(cache_filename, PATH_MAX, "%s/%s", cache_directory, id);
 
     /* Try to open file for reading. */
     FILE *file = fopen(cache_filename, "r");
@@ -143,7 +143,7 @@ unsigned char *cache_load(unsigned char *id, unsigned int *size){
 
 void cache_remove(unsigned char *id){
     /* Build cache filename. */
-    snprintf(cache_filename, PATH_MAX, "%s/%s", cache_directory, id);
+    _snprintf(cache_filename, PATH_MAX, "%s/%s", cache_directory, id);
 
     /* Remove cache file. */
     if(remove(cache_filename) != 0){
@@ -153,7 +153,7 @@ void cache_remove(unsigned char *id){
 
 void cache_store(unsigned char *id, unsigned char *data, unsigned int size){
     /* Build cache filename. */
-    snprintf(cache_filename, PATH_MAX, "%s/%s", cache_directory, id);
+    _snprintf(cache_filename, PATH_MAX, "%s/%s", cache_directory, id);
 
     /* Try to open file for writing. */
     FILE *file = fopen(cache_filename, "w");
@@ -178,7 +178,7 @@ unsigned int cache_get_meta_playlist_revision(){
     unsigned int revision;
 
     /* Build cache filename. */
-    snprintf(cache_filename, PATH_MAX, "%s/meta_playlist_revision", cache_directory);
+    _snprintf(cache_filename, PATH_MAX, "%s/meta_playlist_revision", cache_directory);
 
     /* Try to open file for reading. */
     FILE *file = fopen(cache_filename, "r");
@@ -203,7 +203,7 @@ unsigned int cache_get_meta_playlist_revision(){
 
 void cache_set_meta_playlist_revision(unsigned int revision){
     /* Build cache filename. */
-    snprintf(cache_filename, PATH_MAX, "%s/meta_playlist_revision", cache_directory);
+    _snprintf(cache_filename, PATH_MAX, "%s/meta_playlist_revision", cache_directory);
 
     /* Try to open file for writing. */
     FILE *file = fopen(cache_filename, "w");

@@ -13,6 +13,20 @@
 #include "despotify.h" /* struct user_info declaration */
 #include "shn.h"
 
+//extern struct user_info;
+
+/*
+struct user_info
+{
+	char username[STRING_LENGTH];
+	char country[4];
+	char type[16];
+	time_t expiry;
+	char server_host[STRING_LENGTH];
+	short server_port;
+	time_t last_ping;
+};
+*/
 
 typedef struct session
 {

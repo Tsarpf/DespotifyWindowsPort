@@ -2,22 +2,23 @@
 #define LIBDESPOTIFY_SIMPLE_H
 
 #include "despotify.h"
+#include "session.h"
 
-int despotify_play(SESSION *session, PLAYLIST *playlist, int initial_song);
+bool despotify_play(SESSION *session, playlist *playlist, int initial_song);
 
-int despotify_skip_song(SESSION *session);
-int despotify_previous_song(SESSION *session); 
+bool despotify_skip_song(SESSION *session);
+bool despotify_previous_song(SESSION *session); 
 
-int despotify_queue_song(SESSION *session, TRACK *song);
-int despotify_dequeue_song(SESSION *session, TRACK *song);
+bool despotify_queue_song(SESSION *session, track *song);
+bool despotify_dequeue_song(SESSION *session, track*song);
 
-int despotify_set_shuffle(SESSION *session, int new_state);
-int despotify_get_shuffle(SESSION *session);
+bool despotify_set_shuffle(SESSION *session, int new_state);
+bool despotify_get_shuffle(SESSION *session);
 
-int despotify_set_repeat(SESSION *session, int new_state);
-int despotify_get_repeat(SESSION *session);
+bool despotify_set_repeat(SESSION *session, int new_state);
+bool despotify_get_repeat(SESSION *session);
 
-int despotify_set_volume(SESSION *session, int new_volume);
-int despotify_get_volume(SESSION *session);
+bool despotify_set_volume(SESSION *session, int new_volume);
+bool despotify_get_volume(SESSION *session);
 
 #endif

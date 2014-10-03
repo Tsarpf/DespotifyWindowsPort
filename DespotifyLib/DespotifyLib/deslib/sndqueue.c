@@ -8,7 +8,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <io.h>
-#include "../pthread/pthread.h";
+#include "../pthread/pthread.h"
 #include <assert.h>
 
 #ifdef MP3_SUPPORT

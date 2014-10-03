@@ -18,6 +18,75 @@
     <ClInclude Include="Test.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\DespotifyLib\DespotifyLib\deslib\aes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\DespotifyLib\DespotifyLib\deslib\auth.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\DespotifyLib\DespotifyLib\deslib\buf.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\DespotifyLib\DespotifyLib\deslib\cache.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\DespotifyLib\DespotifyLib\deslib\channel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\DespotifyLib\DespotifyLib\deslib\commands.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\DespotifyLib\DespotifyLib\deslib\despotify.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\DespotifyLib\DespotifyLib\deslib\despotify-simple.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\DespotifyLib\DespotifyLib\deslib\dns.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\DespotifyLib\DespotifyLib\deslib\ezxml.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\DespotifyLib\DespotifyLib\deslib\handlers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\DespotifyLib\DespotifyLib\deslib\hmac.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\DespotifyLib\DespotifyLib\deslib\keyexchange.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\DespotifyLib\DespotifyLib\deslib\network.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\DespotifyLib\DespotifyLib\deslib\packet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\DespotifyLib\DespotifyLib\deslib\puzzle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\DespotifyLib\DespotifyLib\deslib\session.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\DespotifyLib\DespotifyLib\deslib\sha1.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\DespotifyLib\DespotifyLib\deslib\shn.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\DespotifyLib\DespotifyLib\deslib\sndqueue.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\DespotifyLib\DespotifyLib\deslib\util.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\DespotifyLib\DespotifyLib\deslib\winnt.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\DespotifyLib\DespotifyLib\deslib\xml.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Test.cpp">
@@ -25,6 +94,69 @@
     </ClCompile>
     <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\DespotifyLib\DespotifyLib\deslib\session.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\DespotifyLib\DespotifyLib\deslib\aes.c">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\DespotifyLib\DespotifyLib\deslib\auth.c">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\DespotifyLib\DespotifyLib\deslib\buf.c">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\DespotifyLib\DespotifyLib\deslib\cache.c">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\DespotifyLib\DespotifyLib\deslib\channel.c">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\DespotifyLib\DespotifyLib\deslib\commands.c">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\DespotifyLib\DespotifyLib\deslib\despotify.c">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\DespotifyLib\DespotifyLib\deslib\dns.c">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\DespotifyLib\DespotifyLib\deslib\ezxml.c">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\DespotifyLib\DespotifyLib\deslib\handlers.c">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\DespotifyLib\DespotifyLib\deslib\hmac.c">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\DespotifyLib\DespotifyLib\deslib\keyexchange.c">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\DespotifyLib\DespotifyLib\deslib\network.c">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\DespotifyLib\DespotifyLib\deslib\packet.c">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\DespotifyLib\DespotifyLib\deslib\puzzle.c">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\DespotifyLib\DespotifyLib\deslib\sha1.c">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\DespotifyLib\DespotifyLib\deslib\shn.c">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\DespotifyLib\DespotifyLib\deslib\sndqueue.c">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\DespotifyLib\DespotifyLib\deslib\util.c">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\DespotifyLib\DespotifyLib\deslib\xml.c">
+      <Filter>Header Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

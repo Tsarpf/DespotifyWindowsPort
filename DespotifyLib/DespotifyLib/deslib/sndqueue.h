@@ -7,8 +7,9 @@
 #define DESPOTIFY_SNDQUEUE_H
 
 //#include <pthread.h>
-#include "../pthread/pthread.h";
-#include <vorbis/vorbisfile.h>
+#include "../pthread/pthread.h"
+//#include <vorbis/vorbisfile.h>
+#include "../libvorbis/vorbisfile.h"
 
 #include "despotify.h"
 
