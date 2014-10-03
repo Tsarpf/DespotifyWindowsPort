@@ -32,11 +32,11 @@ static int dump_generic (CHANNEL * ch, unsigned char *buf, unsigned short len)
 		return 0;
 
 	if (ch->state == CHANNEL_HEADER)
-		snprintf (filename, sizeof (filename),
+		_snprintf (filename, sizeof (filename),
 			  "/tmp/channel-%d-%s.hdr-%d", ch->channel_id,
 			  ch->name, ch->header_id);
 	else
-		snprintf (filename, sizeof (filename), "/tmp/channel-%d-%s",
+		_snprintf(filename, sizeof(filename), "/tmp/channel-%d-%s",
 			  ch->channel_id, ch->name);
 
 	if ((fd = fopen (filename, "ab")) != NULL) {
@@ -74,7 +74,7 @@ int cmd_requestad (SESSION * session, unsigned char ad_type)
 	char buf[100];
         struct buf* b = buf_new();
 
-	snprintf (buf, sizeof (buf), "RequestAd-with-type-%d", ad_type);
+		_snprintf(buf, sizeof(buf), "RequestAd-with-type-%d", ad_type);
 	ch = channel_register (buf, dump_generic, NULL);
 
 	DSFYDEBUG
@@ -141,7 +141,7 @@ int cmd_search (SESSION * session, char *searchtext, unsigned int offset,
 
 	struct buf* b = buf_new();
 
-	snprintf (buf, sizeof (buf), "Search-%s", searchtext);
+	_snprintf(buf, sizeof(buf), "Search-%s", searchtext);
 	ch = channel_register (buf, callback, private);
 
 	DSFYDEBUG ("allocated channel %d, searching for '%s'\n",

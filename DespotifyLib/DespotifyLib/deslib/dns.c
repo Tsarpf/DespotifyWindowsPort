@@ -36,64 +36,8 @@ char *dns_srv_list (char *hostname)
 	unsigned short svr_prio[10];
 	unsigned short svr_port[10];
 	int n_srv, lowest_prio;
-	
-	/*
-	#ifdef __use_posix__
-	int alen, hlen;
-	char host[1024];
-	unsigned char answer[1024], *p;
-	unsigned short atype, prio, weight, port;
-	HEADER *h = (HEADER *) answer;
-	if (!initialized++)
-		res_init ();
-	if ((alen =
-	     res_search (hostname, ns_c_in, ns_t_srv, answer,
-			 sizeof (answer))) < 0)
-		return NULL;
 
-	p = answer + NS_HFIXEDSZ;
-	h->qdcount = ntohs (h->qdcount);
-	h->ancount = ntohs (h->ancount);
-	while (h->qdcount--) {
-		if ((hlen = dn_skipname (p, answer + alen)) < 0)
-			return NULL;
-		p += hlen + NS_QFIXEDSZ;
-	}
 
-	n_srv = 0;
-	while (h->ancount-- && n_srv < (int) (sizeof (svr) / sizeof (svr[0]))) {
-		if ((hlen =
-		     dn_expand (answer, answer + alen, p, host,
-				sizeof (host))) < 0)
-			break;
-
-		p += hlen;
-		GETSHORT (atype, p);
-
-		p += 6;
-		GETSHORT (hlen, p);
-		if (atype != ns_t_srv) {
-			p += hlen;
-			continue;
-		}
-
-		GETSHORT (prio, p);
-		GETSHORT (weight, p);
-		GETSHORT (port, p);
-		if ((hlen =
-		     dn_expand (answer, answer + alen, p, host,
-				sizeof (host))) < 0)
-			break;
-
-		p += hlen;
-
-		svr[n_srv] = strdup (host);
-		svr_prio[n_srv] = prio;
-		svr_port[n_srv] = port;
-		n_srv++;
-	}
-	*/
-    //#elif defined __use_winsock__
 	PDNS_RECORD pRoot = NULL, p;
 
 	if (DnsQuery_A(hostname, DNS_TYPE_SRV, DNS_QUERY_STANDARD, NULL, &pRoot, NULL) != 0)

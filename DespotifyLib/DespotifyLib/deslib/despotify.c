@@ -1,5 +1,11 @@
+
 #define WIN32_LEAN_AND_MEAN
 #include <WinSock2.h>
+//#include <zlib.h>
+//#include <zlib.h>
+//#include <zlib.h>
+#include <zlib\zlib.h>
+
 #include <Windows.h>
 
 #include <assert.h>
@@ -8,11 +14,9 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
-//#include <sys/time.h>
-//#include <unistd.h>
 #include <io.h>
 //#include <zlib.h>
-#include "../zlib/zlib.h"
+//#include "../zlib/zlib.h
 
 #include "aes.h"
 #include "auth.h"
@@ -31,6 +35,8 @@
 #include "sndqueue.h"
 #include "util.h"
 #include "xml.h"
+
+//#define ZLIB_DLL
 
 #define MAX_BROWSE_REQ 244 /* max entries to load in one browse request */
 
@@ -494,63 +500,62 @@ struct track *despotify_get_current_track(struct despotify_session *ds) {
 
 static struct buf* despotify_inflate(unsigned char* data, int len)
 {
-    if (!len)
-        return NULL;
+		if (!len)
+			return NULL;
 
-    struct z_stream_s z;
-    memset(&z, 0, sizeof z);
+		struct z_stream_s z;
+		memset(&z, 0, sizeof z);
 
-    int rc = inflateInit2(&z, -MAX_WBITS);
-    if (rc != Z_OK) {
-        DSFYDEBUG("error: inflateInit() returned %d\n", rc);
-        return NULL;
-    }
+		int rc = inflateInit2(&z, -MAX_WBITS);
+		if (rc != Z_OK) {
+			DSFYDEBUG("error: inflateInit() returned %d\n", rc);
+			return NULL;
+		}
 
-    z.next_in = data;
-    z.avail_in = len;
+		z.next_in = data;
+		z.avail_in = len;
 
-    struct buf* b = buf_new();
-    buf_extend(b, 4096);
-    bool loop = true;
+		struct buf* b = buf_new();
+		buf_extend(b, 4096);
+		bool loop = true;
 
-    int offset = 0;
-    while (loop) {
-        z.avail_out = b->size - offset;
-        z.next_out = b->ptr + offset;
+		int offset = 0;
+		while (loop) {
+			z.avail_out = b->size - offset;
+			z.next_out = b->ptr + offset;
 
-        rc = inflate(&z, Z_NO_FLUSH);
-        switch (rc) {
-            case Z_OK:
-                /* inflated fine */
-                if (z.avail_out == 0) {
-                    /* zlib needs more output buffer */
-                    offset = b->size;
-                    buf_extend(b, b->size * 2);
-                }
-                break;
+			rc = inflate(&z, 0);
+			switch (rc) {
+			case Z_OK:
+				/* inflated fine */
+				if (z.avail_out == 0) {
+					/* zlib needs more output buffer */
+					offset = b->size;
+					buf_extend(b, b->size * 2);
+				}
+				break;
 
-            case Z_STREAM_END:
-                /* end of input */
-                loop = false;
-                break;
+			case Z_STREAM_END:
+				/* end of input */
+				loop = false;
+				break;
 
-            default:
-                /* error */
-                DSFYDEBUG("error: inflate() returned %d\n", rc);
-                loop = false;
-                buf_free(b);
-                b = NULL;
-                break;
-        }
-    }
+			default:
+				/* error */
+				DSFYDEBUG("error: inflate() returned %d\n", rc);
+				loop = false;
+				buf_free(b);
+				b = NULL;
+				break;
+			}
+		}
 
-    if (b) {
-        b->len = b->size - z.avail_out;
-        buf_append_u8(b, 0); /* null terminate string */
-    }
+		if (b) {
+			b->len = b->size - z.avail_out;
+			buf_append_u8(b, 0); /* null terminate string */
+		}
 
-    inflateEnd(&z);
-
+		inflateEnd(&z);
     return b;
 }
 
@@ -687,7 +692,7 @@ struct search_result* despotify_search(struct despotify_session* ds,
     ds->playlist = calloc(1, sizeof(struct playlist));
 
     char buf[80];
-    snprintf(buf, sizeof buf, "Search: %s", searchtext);
+    _snprintf(buf, sizeof buf, "Search: %s", searchtext);
     buf[(sizeof buf)-1] = 0;
     DSFYstrncpy(ds->playlist->name, buf, sizeof ds->playlist->name);
     DSFYstrncpy(ds->playlist->author, ds->session->username, sizeof ds->playlist->author);
@@ -1081,7 +1086,7 @@ bool despotify_rename_playlist(struct despotify_session *ds,
     char xml[512];
     char* nametag = xml_gen_tag("name", name);
     char* usertag = xml_gen_tag("user", ds->user_info->username);
-    snprintf(xml, sizeof xml, "<change><ops>%s</ops>"
+	_snprintf(xml, sizeof xml, "<change><ops>%s</ops>"
                               "<time>%u</time>%s</change>"
                               "<version>%010u,%010u,%010u,%u</version>",
                               nametag, (unsigned int)time(NULL),
@@ -1139,7 +1144,7 @@ bool despotify_set_playlist_collaboration(struct despotify_session *ds,
     ds->response = buf_new();
     char xml[512];
     char* usertag = xml_gen_tag("user", ds->user_info->username);
-    snprintf(xml, sizeof xml, "<change><ops><pub>%u</pub></ops>"
+	_snprintf(xml, sizeof xml, "<change><ops><pub>%u</pub></ops>"
                               "<time>%u</time>%s</change>"
                               "<version>%010u,%010u,%010u,%u</version>",
                               collaborative, (unsigned int)time(NULL),
@@ -1639,4 +1644,32 @@ char* despotify_track_to_uri(struct track* track, char* dest)
 int despotify_get_pcm(struct despotify_session* ds, struct pcm_data* pcm)
 {
     return snd_get_pcm(ds, pcm);
+}
+/* FILETIME of Jan 1 1970 00:00:00. */
+//#define UINT64CONST const unsigned long
+static const unsigned __int64 epoch = 116444736000000000;
+//static const unsigned __int64 epoch = UINT64CONST(116444736000000000);
+//static const unsigned __int64 epoch = UINT64CONST(116444736000000000);
+
+/*
+38  * timezone information is stored outside the kernel so tzp isn't used anymore.
+39  *
+40  * Note: this function is not for Win32 high precision timing purpose. See
+41  * elapsed_time().
+42  */
+int gettimeofday(struct timeval * tp, struct timezone * tzp)
+{
+	FILETIME    file_time;
+	SYSTEMTIME  system_time;
+	ULARGE_INTEGER ularge;
+
+	GetSystemTime(&system_time);
+	SystemTimeToFileTime(&system_time, &file_time);
+	ularge.LowPart = file_time.dwLowDateTime;
+	ularge.HighPart = file_time.dwHighDateTime;
+
+	tp->tv_sec = (long)((ularge.QuadPart - epoch) / 10000000L);
+	tp->tv_usec = (long)(system_time.wMilliseconds * 1000);
+
+	return 0;
 }

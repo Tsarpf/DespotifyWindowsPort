@@ -1,0 +1,6 @@
+H:/Downloads/GiGo/zlib128/zlib-1.2.8/CMakeFiles/ALL_BUILD.dir
+H:/Downloads/GiGo/zlib128/zlib-1.2.8/CMakeFiles/ZERO_CHECK.dir
+H:/Downloads/GiGo/zlib128/zlib-1.2.8/CMakeFiles/example.dir
+H:/Downloads/GiGo/zlib128/zlib-1.2.8/CMakeFiles/minigzip.dir
+H:/Downloads/GiGo/zlib128/zlib-1.2.8/CMakeFiles/zlib.dir
+H:/Downloads/GiGo/zlib128/zlib-1.2.8/CMakeFiles/zlibstatic.dir

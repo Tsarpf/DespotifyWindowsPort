@@ -95,9 +95,6 @@
     <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\DespotifyLib\DespotifyLib\deslib\session.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\DespotifyLib\DespotifyLib\deslib\aes.c">
       <Filter>Header Files</Filter>
     </ClCompile>

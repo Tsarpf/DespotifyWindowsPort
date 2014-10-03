@@ -1,6 +1,7 @@
 #ifndef LIBDESPOTIFY_H
 #define LIBDESPOTIFY_H
 
+#include <WinSock2.h>
 #include "../pthread/pthread.h"
 #include <stdbool.h>
 #include <time.h>
@@ -10,6 +11,8 @@
 #define MAX_SEARCH_RESULTS 100 /* max search results per request */
 #define SUBSTREAM_SIZE (100 * 1024)
 #define TIMEOUT 10 /* timeout in seconds */
+
+//#include <sys/time.h>
 
 struct track
 {
@@ -335,7 +338,5 @@ char* despotify_track_to_uri(struct track* album, char* dest);
 void despotify_id2uri(char* id, char* uri);
 void despotify_uri2id(char* uri, char* id);
 
-/* internal functions */
-int despotify_snd_read_stream(struct despotify_session* ds);
 
 #endif

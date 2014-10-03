@@ -75,7 +75,10 @@
     <ClCompile Include="deslib\xml.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="deslib\session.cpp">
+    <ClCompile Include="Test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="deslib\session.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -147,6 +150,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="moddedWin\WTypesbase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="zlib128\zlib.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

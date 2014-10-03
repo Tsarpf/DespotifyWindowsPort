@@ -761,9 +761,9 @@ int BIO_printf(BIO *bio, const char *format, ...)
 	__bio_h__attr__((__format__(__printf__,2,3)));
 int BIO_vprintf(BIO *bio, const char *format, va_list args)
 	__bio_h__attr__((__format__(__printf__,2,0)));
-int BIO_snprintf(char *buf, size_t n, const char *format, ...)
+int BIO__snprtinf(char *buf, size_t n, const char *format, ...)
 	__bio_h__attr__((__format__(__printf__,3,4)));
-int BIO_vsnprintf(char *buf, size_t n, const char *format, va_list args)
+int BIO_v_snprtinf(char *buf, size_t n, const char *format, va_list args)
 	__bio_h__attr__((__format__(__printf__,3,0)));
 #undef __bio_h__attr__
 
