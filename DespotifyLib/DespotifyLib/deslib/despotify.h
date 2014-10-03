@@ -4,6 +4,7 @@
 #include "../pthread/pthread.h"
 #include <stdbool.h>
 #include <time.h>
+#include "session.h"
 
 #define STRING_LENGTH 256
 #define MAX_SEARCH_RESULTS 100 /* max search results per request */
@@ -304,7 +305,7 @@ void despotify_free_playlist(struct playlist* playlist);
 
 /* Playback control. */
 
-bool despotify_play(struct despotify_session *ds,
+int despotify_play(struct despotify_session *ds,
                     struct track *song,
                     bool play_as_list);
 void despotify_next(struct despotify_session *ds);
