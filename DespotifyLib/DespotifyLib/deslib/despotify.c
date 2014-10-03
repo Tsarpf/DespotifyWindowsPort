@@ -11,7 +11,9 @@
 //#include <sys/time.h>
 //#include <unistd.h>
 #include <io.h>
-#include <zlib.h>
+//#include <zlib.h>
+
+#include "../zlib/zlib.h"
 
 #include "aes.h"
 #include "auth.h"
