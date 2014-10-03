@@ -2,6 +2,7 @@
  * $Id: sndqueue.c 519 2012-03-17 09:25:26Z dalus $
  *
  */
+#define WIN32_LEAN_AND_MEAN
 #include <Windows.h>
 #include <stdio.h>
 #include <stdlib.h>

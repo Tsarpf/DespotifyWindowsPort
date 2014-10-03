@@ -13,8 +13,8 @@
 // include stuff
 //#ifdef __use_winsock__
  #include <stdio.h>
+#include <winsock2.h>
 #include <Windows.h>
- //#include <winsock.h>
  #ifndef in_addr_t
   #define in_addr_t unsigned long
  #endif

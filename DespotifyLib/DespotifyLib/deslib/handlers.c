@@ -4,6 +4,7 @@
  * Default handlers for different types of commands
  *
  */
+#define WIN32_LEAN_AND_MEAN
 #include <Windows.h>
 
 #include "../pthread/pthread.h"

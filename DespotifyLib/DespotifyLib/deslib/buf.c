@@ -9,6 +9,9 @@
  *
  * $Id: buf.c 182 2009-03-12 08:21:53Z zagor $
  */
+#include <winsock2.h>
+#define WIN32_LEAN_AND_MEAN
+
 #include <Windows.h>
 
 #include <assert.h>

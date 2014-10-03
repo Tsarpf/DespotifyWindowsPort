@@ -2,6 +2,8 @@
  * $Id: dns.c 425 2009-08-04 21:35:54Z noah-w $
  *
  */
+#define WIN32_LEAN_AND_MEAN
+#define _WINSOCK_DEPRECATED_NO_WARNINGS
 #include <Windows.h>
 
 #include <stdio.h>

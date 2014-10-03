@@ -8,6 +8,7 @@
  * exchange the next two packets.
  *
  */
+#include <winsock2.h>
 #include <Windows.h>
 
 #include <stdlib.h>

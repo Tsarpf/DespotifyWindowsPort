@@ -2,6 +2,7 @@
  * $Id: keyexchange.c 508 2010-04-29 19:08:47Z dstien $
  *
  */
+#define WIN32_LEAN_AND_MEAN
 #include <Windows.h>
 
 #include <stdio.h>

@@ -2,6 +2,7 @@
  * $Id: session.c 508 2010-04-29 19:08:47Z dstien $
  *
  */
+#define WIN32_LEAN_AND_MEAN
 #include <Windows.h>
 
 #include <stdlib.h>
@@ -21,6 +22,7 @@
 #include "session.h"
 #include "packet.h"
 #include "util.h"
+#include <process.h>
 
 #include "Ws2tcpip.h";
 
@@ -86,7 +88,7 @@ SESSION *session_init_client (void)
 	memcpy (session->cache_hash,
 		"\xf4\xc2\xaa\x05\xe8\x25\xa7\xb5\xe4\xe6\x59\x0f\x3d\xd0\xbe\x0a\xef\x20\x51\x95",
 		20);
-	session->cache_hash[0] = (unsigned char) getpid ();
+	session->cache_hash[0] = (unsigned char) _getpid ();
 
 	session->ap_sock = -1;
 	session->username[0] = 0;
@@ -129,7 +131,7 @@ void session_auth_set (SESSION * session, const char *username, const char *pass
 		service_list = dns_srv_list("_spotify-client._tcp.spotify.com");
 		if (!service_list) {
 			DSFYDEBUG("Service lookup failed. falling back to ap.spotify.com\n");
-			service_list = malloc(200);
+			service_list = (char*)malloc(200);
 			strcpy(service_list, "ap.spotify.com:4070\n");
 		}
 
