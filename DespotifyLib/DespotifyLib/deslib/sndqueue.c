@@ -29,8 +29,10 @@ enum {
 static void shortsleep(void)
 {
     /* sleep 100 ms */
-    struct timespec delay = {0, 100000000};
-    nanosleep(&delay, NULL);
+    //struct timespec delay = {0, 100000000};
+    //nanosleep(&delay, NULL);
+	//std::this_thread::sleep_for(std::chrono::milliseconds(100));
+	Sleep(100);
 }
 
 void snd_reset_codec(struct despotify_session* ds) {

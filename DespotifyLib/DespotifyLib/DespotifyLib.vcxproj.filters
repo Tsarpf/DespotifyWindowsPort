@@ -13,147 +13,234 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\zlib">
+      <UniqueIdentifier>{dd626e56-d761-4934-aa9e-9fb8b164a84d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\despotify">
+      <UniqueIdentifier>{968562b5-6dfd-4967-9259-5e5137d2397d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\despotify">
+      <UniqueIdentifier>{e983ab1a-c059-4cb9-9dba-583bf5d02a67}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\zlib">
+      <UniqueIdentifier>{8eaa5108-ca77-4d19-bb94-b95fa17c2374}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="deslib\aes.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="deslib\auth.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="deslib\buf.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="deslib\cache.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="deslib\channel.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="deslib\commands.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="deslib\despotify.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="deslib\dns.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="deslib\ezxml.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="deslib\handlers.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="deslib\hmac.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="deslib\keyexchange.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="deslib\network.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="deslib\packet.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="deslib\puzzle.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="deslib\sha1.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="deslib\shn.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="deslib\sndqueue.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="deslib\util.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="deslib\xml.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Test.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="deslib\aes.c">
+      <Filter>Source Files\despotify</Filter>
+    </ClCompile>
+    <ClCompile Include="deslib\auth.c">
+      <Filter>Source Files\despotify</Filter>
+    </ClCompile>
+    <ClCompile Include="deslib\buf.c">
+      <Filter>Source Files\despotify</Filter>
+    </ClCompile>
+    <ClCompile Include="deslib\cache.c">
+      <Filter>Source Files\despotify</Filter>
+    </ClCompile>
+    <ClCompile Include="deslib\channel.c">
+      <Filter>Source Files\despotify</Filter>
+    </ClCompile>
+    <ClCompile Include="deslib\commands.c">
+      <Filter>Source Files\despotify</Filter>
+    </ClCompile>
+    <ClCompile Include="deslib\despotify.c">
+      <Filter>Source Files\despotify</Filter>
+    </ClCompile>
+    <ClCompile Include="deslib\dns.c">
+      <Filter>Source Files\despotify</Filter>
+    </ClCompile>
+    <ClCompile Include="deslib\ezxml.c">
+      <Filter>Source Files\despotify</Filter>
+    </ClCompile>
+    <ClCompile Include="deslib\handlers.c">
+      <Filter>Source Files\despotify</Filter>
+    </ClCompile>
+    <ClCompile Include="deslib\hmac.c">
+      <Filter>Source Files\despotify</Filter>
+    </ClCompile>
+    <ClCompile Include="deslib\keyexchange.c">
+      <Filter>Source Files\despotify</Filter>
+    </ClCompile>
+    <ClCompile Include="deslib\network.c">
+      <Filter>Source Files\despotify</Filter>
+    </ClCompile>
+    <ClCompile Include="deslib\packet.c">
+      <Filter>Source Files\despotify</Filter>
+    </ClCompile>
+    <ClCompile Include="deslib\puzzle.c">
+      <Filter>Source Files\despotify</Filter>
+    </ClCompile>
     <ClCompile Include="deslib\session.c">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\despotify</Filter>
+    </ClCompile>
+    <ClCompile Include="deslib\sha1.c">
+      <Filter>Source Files\despotify</Filter>
+    </ClCompile>
+    <ClCompile Include="deslib\shn.c">
+      <Filter>Source Files\despotify</Filter>
+    </ClCompile>
+    <ClCompile Include="deslib\sndqueue.c">
+      <Filter>Source Files\despotify</Filter>
+    </ClCompile>
+    <ClCompile Include="deslib\util.c">
+      <Filter>Source Files\despotify</Filter>
+    </ClCompile>
+    <ClCompile Include="deslib\xml.c">
+      <Filter>Source Files\despotify</Filter>
+    </ClCompile>
+    <ClCompile Include="zlib128\adler32.c">
+      <Filter>Source Files\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="zlib128\compress.c">
+      <Filter>Source Files\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="zlib128\crc32.c">
+      <Filter>Source Files\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="zlib128\deflate.c">
+      <Filter>Source Files\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="zlib128\gzclose.c">
+      <Filter>Source Files\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="zlib128\gzlib.c">
+      <Filter>Source Files\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="zlib128\gzread.c">
+      <Filter>Source Files\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="zlib128\gzwrite.c">
+      <Filter>Source Files\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="zlib128\infback.c">
+      <Filter>Source Files\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="zlib128\inffast.c">
+      <Filter>Source Files\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="zlib128\inflate.c">
+      <Filter>Source Files\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="zlib128\inftrees.c">
+      <Filter>Source Files\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="zlib128\trees.c">
+      <Filter>Source Files\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="zlib128\uncompr.c">
+      <Filter>Source Files\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="zlib128\zutil.c">
+      <Filter>Source Files\zlib</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="deslib\aes.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\despotify</Filter>
     </ClInclude>
     <ClInclude Include="deslib\auth.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\despotify</Filter>
     </ClInclude>
     <ClInclude Include="deslib\buf.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\despotify</Filter>
     </ClInclude>
     <ClInclude Include="deslib\cache.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\despotify</Filter>
     </ClInclude>
     <ClInclude Include="deslib\channel.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\despotify</Filter>
     </ClInclude>
     <ClInclude Include="deslib\commands.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\despotify</Filter>
     </ClInclude>
     <ClInclude Include="deslib\despotify.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\despotify</Filter>
     </ClInclude>
     <ClInclude Include="deslib\despotify-simple.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\despotify</Filter>
     </ClInclude>
     <ClInclude Include="deslib\dns.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\despotify</Filter>
     </ClInclude>
     <ClInclude Include="deslib\ezxml.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\despotify</Filter>
     </ClInclude>
     <ClInclude Include="deslib\handlers.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\despotify</Filter>
     </ClInclude>
     <ClInclude Include="deslib\hmac.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\despotify</Filter>
     </ClInclude>
     <ClInclude Include="deslib\keyexchange.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\despotify</Filter>
     </ClInclude>
     <ClInclude Include="deslib\network.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\despotify</Filter>
     </ClInclude>
     <ClInclude Include="deslib\packet.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\despotify</Filter>
     </ClInclude>
     <ClInclude Include="deslib\puzzle.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\despotify</Filter>
     </ClInclude>
     <ClInclude Include="deslib\session.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="deslib\shn.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="deslib\sndqueue.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="deslib\util.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="deslib\xml.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\despotify</Filter>
     </ClInclude>
     <ClInclude Include="deslib\sha1.hpp">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\despotify</Filter>
+    </ClInclude>
+    <ClInclude Include="deslib\shn.h">
+      <Filter>Header Files\despotify</Filter>
+    </ClInclude>
+    <ClInclude Include="deslib\sndqueue.h">
+      <Filter>Header Files\despotify</Filter>
+    </ClInclude>
+    <ClInclude Include="deslib\util.h">
+      <Filter>Header Files\despotify</Filter>
     </ClInclude>
     <ClInclude Include="moddedWin\WTypesbase.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\despotify</Filter>
+    </ClInclude>
+    <ClInclude Include="deslib\xml.h">
+      <Filter>Header Files\despotify</Filter>
+    </ClInclude>
+    <ClInclude Include="zlib128\crc32.h">
+      <Filter>Header Files\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="zlib128\deflate.h">
+      <Filter>Header Files\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="zlib128\gzguts.h">
+      <Filter>Header Files\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="zlib128\inffast.h">
+      <Filter>Header Files\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="zlib128\inffixed.h">
+      <Filter>Header Files\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="zlib128\inflate.h">
+      <Filter>Header Files\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="zlib128\inftrees.h">
+      <Filter>Header Files\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="zlib128\trees.h">
+      <Filter>Header Files\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="zlib128\zconf.h">
+      <Filter>Header Files\zlib</Filter>
     </ClInclude>
     <ClInclude Include="zlib128\zlib.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="zlib128\zutil.h">
+      <Filter>Header Files\zlib</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
