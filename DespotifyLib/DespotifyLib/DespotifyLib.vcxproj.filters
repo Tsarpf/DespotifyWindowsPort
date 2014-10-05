@@ -75,9 +75,6 @@
     <ClCompile Include="deslib\puzzle.c">
       <Filter>Source Files\despotify</Filter>
     </ClCompile>
-    <ClCompile Include="deslib\session.c">
-      <Filter>Source Files\despotify</Filter>
-    </ClCompile>
     <ClCompile Include="deslib\sha1.c">
       <Filter>Source Files\despotify</Filter>
     </ClCompile>
@@ -138,6 +135,9 @@
     <ClCompile Include="zlib128\zutil.c">
       <Filter>Source Files\zlib</Filter>
     </ClCompile>
+    <ClCompile Include="deslib\session.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="deslib\aes.h">
@@ -186,9 +186,6 @@
       <Filter>Header Files\despotify</Filter>
     </ClInclude>
     <ClInclude Include="deslib\puzzle.h">
-      <Filter>Header Files\despotify</Filter>
-    </ClInclude>
-    <ClInclude Include="deslib\session.h">
       <Filter>Header Files\despotify</Filter>
     </ClInclude>
     <ClInclude Include="deslib\sha1.hpp">
@@ -241,6 +238,9 @@
     </ClInclude>
     <ClInclude Include="zlib128\zutil.h">
       <Filter>Header Files\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="deslib\session.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

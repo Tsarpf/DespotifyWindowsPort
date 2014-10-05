@@ -6,17 +6,20 @@
 #ifndef DESPOTIFY_UTIL_H
 #define DESPOTIFY_UTIL_H
 
+#define __func__ __FUNCTION__
+
 #include "../pthread/pthread.h"
 //#include <sys/times.h>
 //#include <unistd.h>
 #include <io.h>
 #include <BaseTsd.h>
 typedef SSIZE_T ssize_t;
-#ifdef DEBUG
-#define DSFYDEBUG(...) { FILE *fd = fopen("/tmp/despotify.log","at"); fprintf(fd, "%s:%d %s() ", __FILE__, __LINE__, __func__); fprintf(fd, __VA_ARGS__); fclose(fd); }
-#else
-#define DSFYDEBUG(...)
-#endif
+//#ifdef DEBUG
+//#define DSFYDEBUG(...) { FILE *fd = fopen("/tmp/despotify.log","at"); fprintf(fd, "%s:%d %s() ", __FILE__, __LINE__, __func__); fprintf(fd, __VA_ARGS__); fclose(fd); }
+#define DSFYDEBUG(...) { FILE *fd = fopen("C:\CODE\GitHub\DespotifyWindowsPort\DespotifyLib\DespotifyLib\despotify.log","at"); fprintf(fd, "%s:%d %s() ", __FILE__, __LINE__, __func__); fprintf(fd, __VA_ARGS__); fclose(fd); }
+//#else
+//#define DSFYDEBUG(...)
+//#endif
 
 #define _DSFYDEBUG(...)
 

@@ -15,19 +15,6 @@
 
 //extern struct user_info;
 
-/*
-struct user_info
-{
-	char username[STRING_LENGTH];
-	char country[4];
-	char type[16];
-	time_t expiry;
-	char server_host[STRING_LENGTH];
-	short server_port;
-	time_t last_ping;
-};
-*/
-
 typedef struct session
 {
 	/* connection to Spotify's service */
@@ -141,10 +128,12 @@ typedef struct session
         pthread_cond_t  login_cond;
 } SESSION;
 
-SESSION *session_init_client (void);
-void session_auth_set (SESSION *, const char *, const char *);
-int session_connect (SESSION *);
-SESSION *session_init_client (void);
-void session_disconnect (SESSION *);
-void session_free (SESSION * c);
+//extern "C" {
+SESSION * session_init_client(void);
+	void session_auth_set(SESSION *, const char *, const char *);
+	int session_connect(SESSION *);
+	SESSION *session_init_client(void);
+	void session_disconnect(SESSION *);
+	void session_free(SESSION * c);
+//}
 #endif

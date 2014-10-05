@@ -24,7 +24,7 @@
 #include "util.h"
 #include <process.h>
 
-#include "Ws2tcpip.h";
+#include "Ws2tcpip.h"
 
 static unsigned char DH_generator[1] = { 2 };
 
@@ -43,7 +43,7 @@ static unsigned char DH_prime[] = {
 	0xff, 0xff, 0xff, 0xff, 0xff, 0xff
 };
 
-SESSION *session_init_client (void)
+SESSION *session_init_client ()
 {
 	SESSION *session;
 
